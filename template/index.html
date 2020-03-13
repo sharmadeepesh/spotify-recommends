@@ -1,10 +1,9 @@
-{% load static %}
 
 <html>
 <head>
 	<title>Spotify Recommends | Get recommended Songs</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="css/main.css">
   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -13,34 +12,37 @@
 	<div class="row">
 		<div class="col-md-3">
 		<div class="sidebar">
-			<img class="logo" src="{% static 'img/logo.png' %}">
+			<img class="logo" src="img/logo.png">
 			<div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/home.png' %}">
+				<img class="nav-item-logo" src="img/home.png">
 		    	<a class="upper-nav-link" href="#">Home</a>
 		    </div>
 		    <div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/music.png' %}">
+				<img class="nav-item-logo" src="img/music.png">
 		    	<a class="upper-nav-link" href="#">Song</a>
 		    </div>
 		    <div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/person.png' %}">
+				<img class="nav-item-logo" src="img/person.png">
 		    	<a class="upper-nav-link" href="#">Artist</a>
 		    </div>
 		    <div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/recommend.png' %}">
+				<img class="nav-item-logo" src="img/recommend.png">
 		    	<a class="upper-nav-link" href="#">Recommend</a>
 		    </div>
 		    <div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/contribute.png' %}">
+				<img class="nav-item-logo" src="img/contribute.png">
 		    	<a class="upper-nav-link" href="#">Contribute</a>
 		    </div>
 		</div>
 	</div>
-
-<div class="col-md-9">
-	{% block content %}
-
-	{% endblock content %}
+	<div class="col-md-9">
+	<div class="content">
+		<form class="searchform form-group" method="POST" action="">
+			<input class="form-control search" type="text" placeholder="Enter a song name">
+			<button class="submit-button" type="submit">Submit</button>
+		</form>
+		<p class="random-lyrics">Girl you got the "Yummy" Yum</p>
+	</div>
 </div>
 </body>
 
