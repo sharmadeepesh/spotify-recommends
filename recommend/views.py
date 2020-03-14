@@ -3,9 +3,25 @@ import requests
 import json
 import spotipy
 import spotipy.util as util
+from random import randint
 
 client_id = "94f8b776bcbe42b0a3c8dd46f94303b1"
 client_secret = "55852e22c6b0414eb121890ecdc51692"
+
+random_lyrics = [
+    'Girl, you got that "Yummy" Yum',
+    'And it all keeps "Rushing Back"',
+    'And we want someone to "Lean On"',
+    'And all your "Little Things"',
+    'Your "Sugar", yes please',
+    '"Shaayad", Mai hi hu, shaayad mai nahi',
+    'These are my only "Intentions',
+    'You know that I wont stop until I "Make Your Mine"',
+    'I am standing here "Naked"',
+    'You cant "Roll Like This" like..',
+    '"Girls Like You" run round with guys like me',
+]
+
 
 # Create your views here.
 def artist_detail(request, artist_name = ''):
@@ -38,7 +54,12 @@ def artist_detail(request, artist_name = ''):
         return render(request,'artists/artist_details.html', {'artist_details':artist_details})
     else:
         if artist_name == '':
-            return render(request, 'artists/artist_search.html')
+            value = randint(0, 10)
+            lyrics = random_lyrics[value]
+            context = {
+                'lyrics':lyrics,
+            }
+            return render(request, 'artists/artist_search.html',context=context)
         else:
             token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
             access_token = token.get_access_token()    
@@ -89,7 +110,12 @@ def song_search(request):
         }
         return render(request,'song/song_results.html', context=context)
     else:
-        return render(request,'song/song_search.html')
+        value = randint(0, 10)
+        lyrics = random_lyrics[value]
+        context = {
+            'lyrics':lyrics,
+        }
+        return render(request,'song/song_search.html', context=context)
 
 
 def song_detail(request, song_name):
