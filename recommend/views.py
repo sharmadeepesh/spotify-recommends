@@ -24,6 +24,9 @@ random_lyrics = [
 
 
 # Create your views here.
+def homepage(request):
+    return render(request,'song/song_search.html')
+
 def artist_detail(request, artist_name = ''):
     if request.method == "POST":
         artist_name = request.POST.get('name')
@@ -129,7 +132,7 @@ def song_detail(request, song_name):
     context = {
         'name':track['name'],
         'popularity':track['popularity'],
-        'link':track['href'],
+        'link':"https://open.spotify.com/track/" + track_id,
         'explicit':track['explicit'],
         'artist':track['artists'][0]['name'],
         'album':track['album']['name'],
@@ -137,7 +140,7 @@ def song_detail(request, song_name):
     }
     return render(request, 'song/song_details.html', context=context)
 
-def recommend_songs(request):
+def recommend_songs(request, song_name=""):
     songs = []
     track = []
     if request.method == "POST":
@@ -152,7 +155,7 @@ def recommend_songs(request):
         for song in tracks['tracks']:
             songs.append(song['name'])
             songs.append(song['popularity'])
-            songs.append(song['href'])
+            songs.append("https://open.spotify.com/track/" + track_id),
             songs.append(song['artists'][0]['name'])
             songs.append(song['album']['name'])
             songs.append(song['album']['images'][0]['url'])
@@ -163,7 +166,30 @@ def recommend_songs(request):
         }
         return render(request,'song/recommend_results.html', context=context)
     else:
-        return render(request,'song/recommend_search.html')
+        if song_name == '':
+            return render(request,'song/recommend_search.html')
+        else:
+            token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
+            access_token = token.get_access_token()
+            get_song_details_url = "https://api.spotify.com/v1/search?q={}&type=track&access_token={}"
+            track_response = requests.get(get_song_details_url.format(song_name,access_token)).json()
+            track_id = track_response['tracks']['items'][0]['id']
+            get_recommend_url = "https://api.spotify.com/v1/recommendations?seed_tracks={}&access_token={}"
+            tracks = requests.get(get_recommend_url.format(track_id,access_token)).json()
+            for song in tracks['tracks']:
+                songs.append(song['name'])
+                songs.append(song['popularity'])
+                songs.append("https://open.spotify.com/track/" + track_id),
+                songs.append(song['artists'][0]['name'])
+                songs.append(song['album']['name'])
+                songs.append(song['album']['images'][0]['url'])
+                track.append(songs)
+                songs = []
+            context = {
+                'tracks':track,
+            }
+            return render(request,'song/recommend_results.html', context=context)
+
 
 def recommend_artists(request, artist_name = ""):
     songs = []
@@ -180,7 +206,7 @@ def recommend_artists(request, artist_name = ""):
         for song in artist_response['tracks']:
             songs.append(song['name'])
             songs.append(song['popularity'])
-            songs.append(song['href'])
+            songs.append("https://open.spotify.com/artist/" + artist_id,)
             songs.append(song['artists'][0]['name'])
             songs.append(song['album']['name'])
             songs.append(song['album']['images'][0]['url'])
@@ -204,7 +230,7 @@ def recommend_artists(request, artist_name = ""):
             for song in artist_response['tracks']:
                 songs.append(song['name'])
                 songs.append(song['popularity'])
-                songs.append(song['href'])
+                songs.append("https://open.spotify.com/artist/" + artist_id,)
                 songs.append(song['artists'][0]['name'])
                 songs.append(song['album']['name'])
                 songs.append(song['album']['images'][0]['url'])

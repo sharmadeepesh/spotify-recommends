@@ -163,7 +163,25 @@ div.content {
   font-size:10px !important;
 }
 
+.song-content {
+  margin-top:113px;
+}
 
+.song-heading {
+  margin-right:100px;
+  color:white !important;
+}
 
+.song-artist {
+  color:#D0D0D0 !important;
+}
 
+.song-details {
+  margin-top:50px !important;
+}
+
+.details-table {
+  color:white !important;
+  width:200px;
+}
 

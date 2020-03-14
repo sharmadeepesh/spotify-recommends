@@ -13,26 +13,26 @@
 	<div class="row">
 		<div class="col-md-3">
 		<div class="sidebar">
-			<img class="logo" src="{% static 'img/logo.png' %}">
+			<a href="{% url 'home' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
 			<div class="nav-item">
 				<img class="nav-item-logo" src="{% static 'img/home.png' %}">
-		    	<a class="upper-nav-link" href="#">Home</a>
+		    	<a class="upper-nav-link" href="{% url 'home' %}">Home</a>
 		    </div>
 		    <div class="nav-item">
 				<img class="nav-item-logo" src="{% static 'img/music.png' %}">
-		    	<a class="upper-nav-link" href="#">Song</a>
+		    	<a class="upper-nav-link" href="{% url 'song_search' %}">Song</a>
 		    </div>
 		    <div class="nav-item">
 				<img class="nav-item-logo" src="{% static 'img/person.png' %}">
-		    	<a class="upper-nav-link" href="#">Artist</a>
+		    	<a class="upper-nav-link" href="{% url 'artist' %}">Artist</a>
 		    </div>
 		    <div class="nav-item">
 				<img class="nav-item-logo" src="{% static 'img/recommend.png' %}">
-		    	<a class="upper-nav-link" href="#">Recommend</a>
+		    	<a class="upper-nav-link" href="{% url 'recommend_songs' %}">Recommend</a>
 		    </div>
 		    <div class="nav-item">
 				<img class="nav-item-logo" src="{% static 'img/contribute.png' %}">
-		    	<a class="upper-nav-link" href="#">Contribute</a>
+		    	<a class="upper-nav-link" href="https:/www.github.com/sharmadeepesh/spotify-recommends/">Contribute</a>
 		    </div>
 		</div>
 	</div>

@@ -7,6 +7,8 @@ urlpatterns = [
     path('song/', views.song_search, name="song_search"),
     path('song/<str:song_name>',views.song_detail, name="song"),
     path('recommend-songs/',views.recommend_songs, name="recommend_songs"),
+    path('recommend-songs/<str:song_name>',views.recommend_songs, name="recommend_songs"),
     path('recommend-songs-from-artists/', views.recommend_artists, name="recommend_artists"),
     path('recommend-songs-from-artists/<str:artist_name>/', views.recommend_artists, name="recommend_artists"),
+    path('', views.homepage, name="home"),
 ]
