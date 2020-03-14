@@ -1,34 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-    <div class='container-fluid'>
-    <a class="navbar-brand" style="font-weight: bold;" href="#">spotify Recommends</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="navbar-item">
-                    <a class='nav-link' href="#">Home</a>
-                </li>
-                <li class="navbar-item">
-                    <a class='nav-link' href="#services">Artist</a>
-                </li>
-                <li class="navbar-item active">
-                    <a class='nav-link' href="#about-me">Recommend Artists</a>
-                </li>
-                <li class="navbar-item">
-                    <a class='nav-link' href="#projects">About Us</a>
-                </li>
-                <li class="navbar-item">
-                    <a class='nav-link' href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
     <h1>Tell us your favorite artist. We'll suggest some that you may like.</h1>
     <form method="POST" action="{% url 'recommend_artists' %}">
     {% csrf_token %}
