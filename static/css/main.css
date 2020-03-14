@@ -4,7 +4,6 @@ body,html{
   width:100%;
   height: auto;
   overflow-x: hidden;
-  color:white !important;
 }
 
 .nav-item {
@@ -68,6 +67,49 @@ body,html{
   margin-top:10px;
 }
 
+.search-heading {
+  font-size:35px !important;
+  color:white !important;
+}
+
+.results {
+  margin-top: 5px !important;
+  margin-left: -30px !important;
+  margin-right: 50px !important;
+}
+
+.card-img {
+  padding:10px !important;
+  width:180px !important;
+  align-content: center !important; 
+  margin:auto !important;
+}
+
+.cards {
+  padding:10px !important;
+  background-color:#565656 !important;
+  margin:10px !important;
+  margin-right:0px !important;
+  border-radius:10px !important;
+}
+
+.result-section {
+  margin-top: 50px;
+  overflow-y: hidden !important;
+}
+
+
+.card-heading {
+  text-align: center !important;
+  color:white !important;
+  font-size:25px !important;
+}
+.card-artist {
+  text-align:center !important;
+  color:#D0D0D0 !important;
+  font-size:10px !important;
+}
+
 /* The side navigation menu */
 .sidebar {
   margin:0px !important;
@@ -120,7 +162,6 @@ div.content {
     float: none;
   }
 }
-
 
 
 
