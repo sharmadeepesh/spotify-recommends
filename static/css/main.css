@@ -15,8 +15,7 @@ body,html{
 }
 
 .random-lyrics {
-  margin-top: 250px;
-  margin-left: 300px;
+  margin: 250px 110px;
   color:grey;
   opacity: 50%;
   font-size:30px;

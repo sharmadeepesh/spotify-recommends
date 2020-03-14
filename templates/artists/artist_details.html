@@ -1,15 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>Here are some things about {{ artist_details.name }}</h1>
-    <img src="{{ artist_details.picture }}">
-    <a href="{{ artist_details.link }}">Spotify Link</a>
-    <p>Popularity : {{ artist_details.popularity }}</p>
-    <p>Type : {{ artist_details.user_type }}</p>
-    <p>Genre : {% for genre in artist_details.genres %} {{genre}} {% endfor %}</p>
-    <p>Followers : {{ artist_details.followers }}</p>
-    <a href="{% url 'recommend_artists' artist_name=artist_details.name %}">Related Artists</a>
-</body>
-</html>
+ <div style="margin-top:113px;" class="song-content">
+	<div style="margin-right:100px;color:white !important;" class="song-heading">
+		<h1 style="margin-right:500px;text-decoration: bold">{{artist_details.name}}</h1>
+	</div>
+	<div style="color:#D0D0D0 !important;" class="song-artist">
+		<h3>{{artist_details.followers}} followers</h3>
+	</div>
+	<div class="song-image">
+		<img style="border-radius:30px;box-shadow:0px 0px 10px black;width: 500px;height: auto;float: right;margin-right: 50px;margin-top:-90px;" src="{{artist_details.picture}}">
+	</div>
+	<div style="margin-top:50px !important;" class="song-details">
+		<table style="width:100px !important;color:white !important;width:200px;" class="table table-hover details-table">
+			<tr>
+				<th><strong>Genre</strong></th>
+				<td style="text-transform: capitalize;">{% for genre in artist_details.genres %} {{genre}} {% endfor %}<</td>
+			</tr>
+			<tr>
+				<th><strong>Spotify Link</strong></th>
+				<td><a href="{{artist_details.link}}">{{artist_details.name}}</a></td>
+			</tr>
+			<tr>
+				<th><strong>Popularity</strong></th>
+				<td>{{artist_details.popularity}}</td>
+			</tr>
+			<tr>
+				<th><strong>User Type</strong></th>
+				<td style="text-transform: capitalize;">{{artist_details.user_type}}</td>
+			</tr>
+			<tr>
+				<th><strong>Recommended Songs</strong></th>
+				<td><a href="{% url 'recommend_artists' artist_name=artist_details.name %}">Recommended Songs</a></td>
+			</tr>
+		</table>
+	</div>
+</div>
 
  {% endblock content %}
+

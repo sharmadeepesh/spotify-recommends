@@ -25,7 +25,12 @@ random_lyrics = [
 
 # Create your views here.
 def homepage(request):
-    return render(request,'song/song_search.html')
+    value = randint(0, 10)
+    lyrics = random_lyrics[value]
+    context = {
+        'lyrics':lyrics,
+    }
+    return render(request,'song/song_search.html', context=context)
 
 def artist_detail(request, artist_name = ''):
     if request.method == "POST":
@@ -106,6 +111,7 @@ def song_search(request):
             songs.append(song['artists'][0]['name'])
             songs.append(song['album']['name'])
             songs.append(song['album']['images'][0]['url'])
+            songs.append(song['name'] + ' ' + song['artists'][0]['name'])
             track.append(songs)
             songs = []
         context = {
