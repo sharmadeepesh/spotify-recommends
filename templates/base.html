@@ -10,38 +10,38 @@
 </head>
 
 <body>
-	<div class="row">
-		<div class="col-md-3">
-		<div style="overflow-x:hidden" class="sidebar">
-			<a href="{% url 'home' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
+	<div class="sidebar">
+		<div class="brand-logo">
+			<a href="{% url 'home' %}">
+			<img src="{% static 'img/logo.png' %}"></a>
+		</div>
+		<div class="nav-menu">
 			<div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/home.png' %}">
-		    	<a class="upper-nav-link" href="{% url 'home' %}">Home</a>
-		    </div>
-		    <div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/music.png' %}">
-		    	<a class="upper-nav-link" href="{% url 'song_search' %}">Song</a>
-		    </div>
-		    <div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/person.png' %}">
-		    	<a class="upper-nav-link" href="{% url 'artist' %}">Artist</a>
-		    </div>
-		    <div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/recommend.png' %}">
-		    	<a class="upper-nav-link" href="{% url 'recommend_songs' %}">Recommend</a>
-		    </div>
-		    <div class="nav-item">
-				<img class="nav-item-logo" src="{% static 'img/contribute.png' %}">
-		    	<a class="upper-nav-link" href="https:/www.github.com/sharmadeepesh/spotify-recommends/">Contribute</a>
-		    </div>
+				<img src="{% static 'img/home.png' %}">
+				<a href="{% url 'home' %}">Home</a>
+			</div>
+			<div class="nav-item">
+				<img src="{% static 'img/music.png' %}">
+				<a href="{% url 'song_search' %}">Song</a>
+			</div>
+			<div class="nav-item">
+				<img src="{% static 'img/person.png' %}">
+				<a href="{% url 'artist' %}">Artist</a>
+			</div>
+			<div class="nav-item">
+				<img src="{% static 'img/recommend.png' %}">
+				<a href="{% url 'recommend_songs' %}">Recommend</a>
+			</div>
+			<div class="nav-item">
+				<img src="{% static 'img/contribute.png' %}">
+				<a href="https://www.github.com/sharmadeepesh/spotify-recommends/">Contribute</a>
+			</div>
 		</div>
 	</div>
 
-<div class="col-md-9">
-	{% block content %}
+{% block content %}
 
-	{% endblock content %}
-</div>
+{% endblock content %}
 </body>
 
 </html>

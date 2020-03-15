@@ -1,163 +1,75 @@
-body,html{
+body,html {
   background-color: #121212 !important;
-  font-family: 'Montserrat', sans-serif !important;
-  width:100%;
+  list-style:none;
+  padding:0px;
+  margin:0px;
+}
+
+.brand-logo {
+  width:200px;
+  margin:20px auto;
+}
+
+.brand-logo img{
+  width:200px;
   height: auto;
-  overflow-x: hidden;
+}
+
+.sidebar {
+  width:230px;
+  height:1000px;
+  position:fixed;
+  background-color: #030303;
 }
 
 .nav-item {
-  margin:5px auto;
+  width:175px;
+  height:auto;
+  margin:30px auto;
 }
 
-.searchform {
-  margin-top: 35px;
+.nav-item img{
+  width:24px;
+  height:auto;
+  margin-right: 10px;
 }
 
-.random-lyrics {
-  margin: 250px 110px;
-  color:grey;
-  opacity: 50%;
-  font-size:30px;
+.nav-item a{
+  text-decoration: none;
+  font-weight: bold;
+  color:#b3b3b3;
+  font-size:14px;
+  margin:auto;
 }
 
-.submit-button {
-  display:none !important;
-}
-
-.search{
-  width: 300px !important;
-  height: 30px !important;
-  border-radius:10px !important;
-}
-
-.nav-item:hover{
-  background-color: #282828;
-  border-radius:10px;
-  height: auto;
+.nav-item a:hover{
+  text-decoration: none !important;
+  color:white;
 }
 
 .content {
-  padding:0px !important;
-  margin:0px !important;
-}
-.nav-item-logo {
-  width: 30px;
-  height: auto;
-  margin: 17px 0px 17px 27px;
-  display:inline;
+  margin-left:230px;
+  background-color: #121212;
+  position:fixed;
 }
 
-.upper-nav-link {
-  color:white !important;
-  font-weight:bolder;
-  display: inline !important;
-  font-size: 20px;
-  margin-left:8px;
+.search-form {
+  margin:30px 30px;
 }
 
-.logo {
-  width:200px;
-  height: auto;
-  margin: 10px 25px;
+.search-form input{
+  width:300px !important;
+  height:40px;
+  border-radius: 25px;
+  border:none !important;
+  position: absolute;
 }
 
-.stats-table {
-  margin-top:10px;
+.button {
+  display:none;
 }
 
-.search-heading {
-  font-size:35px !important;
-  color:white !important;
-}
-
-.results {
-  margin-top: 5px !important;
-  margin-left: -30px !important;
-  margin-right: 50px !important;
-}
-
-.card-img {
-  padding:10px !important;
-  width:180px !important;
-  align-content: center !important; 
-  margin:auto !important;
-}
-
-.cards {
-  padding:10px !important;
-  background-color:#565656 !important;
-  margin:10px !important;
-  margin-right:0px !important;
-  border-radius:10px !important;
-}
-
-.result-section {
-  margin-top: 50px;
-  overflow-y: hidden !important;
-}
-
-
-.card-heading {
-  text-align: center !important;
-  color:white !important;
-  font-size:25px !important;
-}
-.card-artist {
-  text-align:center !important;
-  color:#D0D0D0 !important;
-  font-size:10px !important;
-}
-
-/* The side navigation menu */
-.sidebar {
-  margin:0px !important;
-  padding: 0px;
-  width: 250px;
-  background-color: #030303;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-/* Sidebar links */
-.sidebar a {
-  display: block;
-  color: white;
-  padding: 16px;
-  text-decoration: none;
-}
-
-/* Active/current link */
-.sidebar a.active {
-  background-image: linear-gradient(to right, #9400D3, #8A2BE2);
-  box-shadow: 0px 0px 20px #9400D3;
-  color: white;
-}
-
-/* Links on mouse-over */
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
+.search-form input[type=text] {
+  padding-left:15px;
+  padding-bottom:5px;
 }
