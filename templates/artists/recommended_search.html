@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Tell us your favorite artist. We'll suggest some that you may like.</h1>
-    <form method="POST" action="{% url 'recommend_artists' %}">
-    {% csrf_token %}
-    <input type="text" placeholder="Enter the artist name" name="name">
-    <button type="submit">Submit</button>
-</form>
+
+<div class="content w-100 h-100">
+		<div class="search-form">
+			<form class="form" action="{% url 'recommend_artists' %}" method="POST">
+				{% csrf_token %}
+				<input type="text" name="name" placeholder="Enter your favorite artist name">
+				<button class="button" type="submit">Submit</button>
+			</form>
+		</div>
+
+		<div class="row h-100">
+			<div class="col-md-12 align-self-center text-center">
+				<h2>{{ lyrics }}</h2>
+			</div>
+		</div>
+</div>
 
 {% endblock content %}

@@ -173,7 +173,12 @@ def recommend_songs(request, song_name=""):
         return render(request,'song/recommend_results.html', context=context)
     else:
         if song_name == '':
-            return render(request,'song/recommend_search.html')
+            value = randint(0, 10)
+            lyrics = random_lyrics[value]
+            context = {
+                'lyrics':lyrics,
+            }
+            return render(request,'song/recommend_search.html', context=context)
         else:
             token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
             access_token = token.get_access_token()
@@ -224,7 +229,12 @@ def recommend_artists(request, artist_name = ""):
         return render(request,'song/recommend_results.html', context=context)
     else:
         if artist_name == '':
-            return render(request,'artists/recommended_search.html')
+            value = randint(0, 10)
+            lyrics = random_lyrics[value]
+            context = {
+                'lyrics':lyrics,
+            }
+            return render(request,'artists/recommended_search.html', context=context)
         else:
             token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
             access_token = token.get_access_token()

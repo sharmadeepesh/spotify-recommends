@@ -2,12 +2,20 @@
 
 {% block content %}
 
+<div class="content w-100 h-100">
+	<div class="search-form">
+		<form class="form" action="{% url 'recommend_songs' %}" method="POST">
+			{% csrf_token %}
+			<input type="text" name="name" placeholder="Enter your favorite song name">
+			<button class="button" type="submit">Submit</button>
+		</form>
+	</div>
 
-    <h1>Tell us your favorite song. We'll suggest some that you may like.</h1>
-<form method="POST" action="{% url 'recommend_songs' %}">
-    {% csrf_token %}
-    <input type="text" placeholder="Enter the song name" name="name">
-    <button type="submit">Submit</button>
-</form>
+	<div class="row h-100">
+		<div class="col-md-12 align-self-center text-center">
+			<h2>{{ lyrics }}</h2>
+		</div>
+	</div>
+</div>
 
 {% endblock content %}

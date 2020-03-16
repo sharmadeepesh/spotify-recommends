@@ -3,15 +3,22 @@
 
 {% block content %}
 
+<div class="content w-100 h-100">
+	<div class="search-form">
+		<form class="form" action="{% url 'song_search' %}" method="POST">
+			{% csrf_token %}
+			<input type="text" name="name" placeholder="Enter Song or an Artist">
+			<button class="button" type="submit">Submit</button>
+		</form>
+	</div>
 
-<div class="content">
-    <form class="searchform form-group" method="POST" action="{% url 'song_search' %}">
-        {% csrf_token %}
-        <input class="form-control search" type="text" name="name"placeholder="Enter a song name">
-        <button class="submit-button" type="submit">Submit</button>
-    </form>
-    <p class="random-lyrics">{{lyrics}}</p>
+	<div class="row h-100">
+		<div class="col-md-12 align-self-center text-center">
+			<h2>{{ lyrics }}</h2>
+		</div>
+	</div>
 </div>
+
 
 
 {% endblock content %}
