@@ -49,8 +49,9 @@ body,html {
 
 .content {
   margin-left:230px;
+  height:auto;
   background-color: #121212;
-  position:fixed;
+  position:absolute;
 }
 
 .search-form {
@@ -72,4 +73,41 @@ body,html {
 .search-form input[type=text] {
   padding-left:15px;
   padding-bottom:5px;
+}
+
+.result-image img{
+  width:158px;
+  height:158px;
+  margin:20px;
+}
+
+.search-results {
+  margin: 130px 75px;
+}
+
+.result {
+  background-color: #272727;
+  border-radius:15px;
+  width:198px;
+  height:auto;
+  color:white;
+  margin-bottom: 30px;
+}
+
+.result-header h3{
+  font-size:15px;
+  color:white;
+  text-align: center;
+  word-break: break-all;
+}
+
+.result-desc h6{
+  font-size:12px;
+  color:grey;
+  text-align: center;
+  word-break: break-all;
+}
+
+.result-details {
+  padding-bottom:10px;
 }

@@ -3,9 +3,9 @@
 
 {% block content %}
 
-<div class="content w-100 h-100">
+<div class="content w-75 h-100">
 	<div class="search-form">
-		<form class="form" action="{% url 'song_search' %}" method="POST">
+		<form class="form" action="{% url 'song' %}" method="POST">
 			{% csrf_token %}
 			<input type="text" name="name" placeholder="Enter Song or an Artist">
 			<button class="button" type="submit">Submit</button>

@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<div class="content">
+<div class="content h-auto">
 	<div class="search-form">
 		<form class="form" action="{% url 'recommend_songs' %}" method="POST">
 			{% csrf_token %}
@@ -11,15 +11,23 @@
 			<button class="button" type="submit">Submit</button>
 		</form>
 	</div>
-	<div style="margin-top: 50px;overflow-y: hidden !important;" class="result-section">
-		<h2 style="font-size: 35px;color: white;" class="search-heading">Search Results</h2>
-		<div style="margin-top: 5px !important;margin-left: -30px !important;margin-right: 50px !important;" class="results row">
+
+	<div class="search-results">
+		<div class="row">
 			{% for track in tracks %}
 				<div class="col-md-3">
-					<div style="padding: 10px;background-color: #565656;margin: 10px;margin-right: 0px;border-radius: 10px;" class="cards">
-						<a href="{% url 'song' song_name=track.0 %}"><img style="padding: 10px;width: 180px !important;align-content: center;margin: auto;" class="card-img" src="{{ track.5 }}"></a>
-						<h4 style="text-align:center;color: white;font-size: 20px !important;" class="card-heading">{{track.0}}</h4>
-						<h5 style="text-align: center;color: #D0D0D0;font-size: 15px !important;" class="card-artist">{{track.3}}</h5>
+					<div class="w-80 result">
+						<div class="result-image">
+							<a href="{% url 'song' song_name=track.0 %}"><img src="{{track.5}}"></a>
+						</div>
+						<div class="result-details">
+							<div class="result-header">
+								<a href="{% url 'song' song_name=track.0 %}"><h3>{{track.0}}</h3></a>
+							</div>
+							<div class="result-desc">
+								<a href="{% url 'artist' artist_name=track.3 %}"><h6>{{track.3}}</h6></a>
+							</div>
+						</div>
 					</div>
 				</div>
 			{% endfor %}

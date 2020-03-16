@@ -22,7 +22,7 @@
 			</div>
 			<div class="nav-item">
 				<img src="{% static 'img/music.png' %}">
-				<a href="{% url 'song_search' %}">Song</a>
+				<a href="{% url 'song' %}">Song</a>
 			</div>
 			<div class="nav-item">
 				<img src="{% static 'img/person.png' %}">
@@ -30,7 +30,11 @@
 			</div>
 			<div class="nav-item">
 				<img src="{% static 'img/recommend.png' %}">
-				<a href="{% url 'recommend_songs' %}">Recommend</a>
+				<a href="{% url 'recommend_songs' %}">Recommend Songs</a>
+			</div>
+			<div class="nav-item">
+				<img src="{% static 'img/recommend.png' %}">
+				<a href="{% url 'recommend_artists' %}">Recommend Artists</a>
 			</div>
 			<div class="nav-item">
 				<img src="{% static 'img/contribute.png' %}">

@@ -2,15 +2,44 @@
 {% load static %}
 
 {% block content %}
-<div class="content">
+<div class="content h-auto">
 	<div class="search-form">
-		<form class="form" action="{% url 'song_search' %}" method="POST">
+		<form class="form" action="{% url 'song' %}" method="POST">
 			{% csrf_token %}
 			<input type="text" name="name" placeholder="Enter Song or an Artist">
 			<button class="button" type="submit">Submit</button>
 		</form>
 	</div>
-	<div style="margin-top: 50px;overflow-y: hidden !important;" class="result-section">
+
+
+	<div class="search-results">
+		<div class="row">
+			{% for track in tracks %}
+				<div class="col-md-3">
+					<div class="w-80 result">
+						<div class="result-image">
+							<a href="{% url 'song' song_name=track.6 %}"><img src="{{track.5}}"></a>
+						</div>
+						<div class="result-details">
+							<div class="result-header">
+								<a href="{% url 'song' song_name=track.6 %}"><h3>{{track.0}}</h3></a>
+							</div>
+							<div class="result-desc">
+								<a href="{% url 'artist' artist_name=track.3 %}"><h6>{{track.3}}</h6></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+</div>
+
+
+
+
+	<!--<div style="margin-top: 50px;overflow-y: hidden !important;" class="result-section">
 		<h2 style="font-size: 35px;color: white;" class="search-heading">Search Results</h2>
 		<div style="margin-top: 5px !important;margin-left: -30px !important;margin-right: 50px !important;" class="results row">
 			{% for track in tracks %}
@@ -24,6 +53,6 @@
 			{% endfor %}
 		</div>
 	</div>
-</div>
+</div>-->
 
 {% endblock content %}
