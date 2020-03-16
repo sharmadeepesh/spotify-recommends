@@ -10,6 +10,10 @@ body,html {
   margin:20px auto;
 }
 
+.mobile {
+  display:none;
+}
+
 .brand-logo img{
   width:200px;
   height: auto;
@@ -116,6 +120,10 @@ body,html {
   color:white !important;
 }
 
+.artist-name h1{
+  color:white !important;
+}
+
 .artist-followers h3{
   color:#D0D0D0 !important;
 }
@@ -130,7 +138,6 @@ body,html {
 
 .artist-name {
   margin-bottom:15px;
-  color:white !important;
 }
 
 .down table{
@@ -142,11 +149,38 @@ body,html {
 }
 
 .artist-image img{
-  border-radius:15px !important;
+  border-radius:15px;
   box-shadow:0px 0px 20px black;
   width: 400px;
 }
 
 .artist-wrapper {
   margin:0px 50px !important;
-} 
+}
+
+@media (max-width:1250px) and (min-width:994px){
+  .result{
+    margin: 20px;
+  }
+}
+
+@media (max-width:1200px)
+{ 
+  body, html{
+    background-color: white !important;
+    line-height: 1.2px;
+    padding:10px;
+  }
+  .mobile {
+    display:inline-block;
+  }
+  .desktop{
+    display:none;
+  }
+  img {
+    width:300px;
+    height: auto;
+    padding:10px;
+    margin:0px auto;
+  }
+}

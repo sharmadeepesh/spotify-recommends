@@ -3,43 +3,6 @@
 
 {% block content %}
 
-   <!--<div style="margin-top:113px;" class="song-content">
-	<div style="margin-right:100px;color:white !important;" class="song-heading">
-		<h1 style="margin-right:500px;text-decoration: bold">{{name}}</h1>
-	</div>
-	<div style="color:#D0D0D0 !important;" class="song-artist">
-		<h3>{{artist}}</h3>
-	</div>
-	<div class="song-image">
-		<img style="border-radius:30px;box-shadow:0px 0px 10px black;width: 500px;height: auto;float: right;margin-right: 50px;margin-top:-90px;" src="{{image}}">
-	</div>
-	<div style="margin-top:50px !important;" class="song-details">
-		<table style="width:100px !important;color:white !important;width:200px;" class="table table-hover details-table">
-			<tr>
-				<th width="100px"><strong>Album</strong></th>
-				<td>{{album}}</td>
-			</tr>
-			<tr>
-				<th><strong>Spotify Link</strong></th>
-				<td><a href="{{link}}">{{name}}</a></td>
-			</tr>
-			<tr>
-				<th><strong>Popularity</strong></th>
-				<td>{{popularity}}</td>
-			</tr>
-			<tr>
-				<th><strong>Explicit</strong></th>
-				<td>{{explicit}}</td>
-			</tr>
-			<tr>
-				<th><strong>Recommended Songs</strong></th>
-				<td><a href="{% url 'recommend_songs' song_name=name %}">Recommended</a></td>
-			</tr>
-		</table>
-	</div>
-</div>-->
-
-
 <div class="content h-auto">
 	<div class="search-form">
 		<form class="form" action="{% url 'song' song_name=name %}" method="POST">
@@ -51,7 +14,7 @@
 	
 
 	<div class="row artist-wrapper">
-		<div class="col-md-6">
+		<div class="col-sm-12 col-md-12 col-lg-6">
 			<div class="artist-details">
 				<div class="top">
 					<div class="artist-name">
@@ -89,7 +52,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<div class="artist-image">
 				<img src="{{image}}">
 			</div>

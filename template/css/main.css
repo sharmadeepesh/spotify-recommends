@@ -10,6 +10,10 @@ body,html {
   margin:20px auto;
 }
 
+.mob-menu {
+  display:none;
+}
+
 .brand-logo img{
   width:200px;
   height: auto;
@@ -148,4 +152,110 @@ body,html {
 
 .artist-wrapper {
   margin:0px 50px !important;
+}
+
+@media only screen and (max-width:768px)
+{
+
+  *{
+    margin:0px !important;
+  }
+
+  .sidebar{
+    display:none;
+  }
+
+  body, html {
+    width:100%;
+    height: auto;
+    font-size:15px !important;
+  }
+
+  .mob-menu {
+    width:100% !important;
+    display:inline-block;
+    background-color: black;
+  }
+
+  .mob-brand-logo {
+    width:50% !important;
+    margin:10px 0px !important;
+    display:inline-block !important;
+  }
+
+  .mob-brand-logo img{
+    width:75%;
+    margin:0px 12.5px !important;
+  }
+  .content {
+    width:100% !important;
+  }
+  .dropdown {
+    display:inline-block;
+    margin-left: 40% !important;
+  }
+
+  .search-form {
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 100% !important;
+    height: auto !important;
+    text-align: center !important;
+  }
+
+  .search-form form{
+    display: inline-block;
+    margin: 50px 0px !important;
+    width:100% !important;
+    height:30px;
+  }
+
+  .search-form input{
+    margin:0px !important;
+    padding:0px !important;
+    position:relative;
+    width: 75% !important;
+    height: 50px !important;
+  }
+
+  .top {
+    margin:20px 0px !important;
+    text-align: center;
+  }
+  .artist-name{
+    margin:5px !important;
+  }
+  .artist-desc{
+    margin:5px !important;
+  }
+  .down{
+    margin:20px 0px !important;
+  }
+  .down table{
+    margin: 0px auto !important;
+  }
+  .artist-image img{
+    width: 75%;
+    height: auto;
+    margin: 0 13% !important;
+  }
+  .navbar-toggler {
+    margin-right: 5% !important;
+    margin-top: -10% !important;
+  }
+  .navbar-nav {
+    padding:0px !important;
+  }
+  .nav-item {
+    width:75% !important;
+    margin:10px 10px !important;
+  }
+  .nav-item a{
+    font-size:20px !important;
+  }
+  .nav-item img{
+    margin-right:10px !important;
+    height:28px !important;
+    width: auto !important;
+  }
 }
