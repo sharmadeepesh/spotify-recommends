@@ -111,3 +111,41 @@ body,html {
 .result-details {
   padding-bottom:10px;
 }
+
+.down table{
+  color:white !important;
+}
+
+.artist-followers h3{
+  color:#D0D0D0 !important;
+}
+
+.artist-details {
+  margin: 85px 0px 0px 50px;
+}
+
+.top{
+  margin-bottom: 50px;
+}
+
+.artist-name {
+  margin-bottom:15px;
+}
+
+.down table{
+  width:100px;
+}
+
+.artist-image {
+  margin: 100px 0px 0px 50px;
+}
+
+.artist-image img{
+  border-radius:15px;
+  box-shadow:0px 0px 20px black;
+  width: 400px;
+}
+
+.artist-wrapper {
+  margin:0px 50px !important;
+}

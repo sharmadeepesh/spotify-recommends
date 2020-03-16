@@ -1,40 +1,63 @@
 {% extends 'base.html' %}
 {% block content %}
 
- <div style="margin-top:113px;" class="song-content">
-	<div style="margin-right:100px;color:white !important;" class="song-heading">
-		<h1 style="margin-right:500px;text-decoration: bold">{{artist_details.name}}</h1>
+<div class="content h-auto">
+	<div class="search-form">
+		<form class="form" action="{% url 'artist' artist_name=artist_details.name %}" method="POST">
+			{% csrf_token %}
+			<input type="text" name="name" placeholder="Enter an artist name">
+			<button class="button" type="submit">Submit</button>
+		</form>
 	</div>
-	<div style="color:#D0D0D0 !important;" class="song-artist">
-		<h3>{{artist_details.followers}} followers</h3>
+
+
+	<div class="row artist-wrapper">
+		<div class="col-md-6">
+			<div class="artist-details">
+				<div class="top">
+					<div class="artist-name">
+						<h1>{{artist_details.name}}</h1>
+					</div>
+					<div class="artist-followers">
+						<h3>{{artist_details.followers}} followers</h3>
+					</div>
+				</div>
+
+				<div class="down">
+					<table class="table table-hover">
+						<tr>
+							<th>Genre</th>
+							<td style="text-transform: capitalize;">{% for genre in artist_details.genres %} {{genre}} {% endfor %}</td>
+						</tr>
+						<tr>
+							<th>Artist Profile</th>
+							<td><a href="{{artist_details.link}}">Spotify</a></td>
+						</tr>
+						<tr>
+							<th>Popularity</th>
+							<td>{{artist_details.popularity}}</td>
+						</tr>
+						<tr>
+							<th>User Type</th>
+							<td style="text-transform: capitalize;">{{artist_details.user_type}}</td>
+						</tr>
+						<tr>
+							<th>Recommended Songs</th>
+							<td><a href="{% url 'recommend_artists' artist_name=artist_details.name %}">Recommended Songs</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="artist-image">
+				<img src="{{artist_details.picture}}">
+			</div>
+		</div>
+
 	</div>
-	<div class="song-image">
-		<img style="border-radius:30px;box-shadow:0px 0px 10px black;width: 500px;height: auto;float: right;margin-right: 50px;margin-top:-90px;" src="{{artist_details.picture}}">
-	</div>
-	<div style="margin-top:50px !important;" class="song-details">
-		<table style="width:100px !important;color:white !important;width:200px;" class="table table-hover details-table">
-			<tr>
-				<th><strong>Genre</strong></th>
-				<td style="text-transform: capitalize;">{% for genre in artist_details.genres %} {{genre}} {% endfor %}<</td>
-			</tr>
-			<tr>
-				<th><strong>Spotify Link</strong></th>
-				<td><a href="{{artist_details.link}}">{{artist_details.name}}</a></td>
-			</tr>
-			<tr>
-				<th><strong>Popularity</strong></th>
-				<td>{{artist_details.popularity}}</td>
-			</tr>
-			<tr>
-				<th><strong>User Type</strong></th>
-				<td style="text-transform: capitalize;">{{artist_details.user_type}}</td>
-			</tr>
-			<tr>
-				<th><strong>Recommended Songs</strong></th>
-				<td><a href="{% url 'recommend_artists' artist_name=artist_details.name %}">Recommended Songs</a></td>
-			</tr>
-		</table>
-	</div>
+
 </div>
 
  {% endblock content %}

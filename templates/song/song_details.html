@@ -3,7 +3,7 @@
 
 {% block content %}
 
-   <div style="margin-top:113px;" class="song-content">
+   <!--<div style="margin-top:113px;" class="song-content">
 	<div style="margin-right:100px;color:white !important;" class="song-heading">
 		<h1 style="margin-right:500px;text-decoration: bold">{{name}}</h1>
 	</div>
@@ -37,7 +37,68 @@
 			</tr>
 		</table>
 	</div>
+</div>-->
+
+
+<div class="content h-auto">
+	<div class="search-form">
+		<form class="form" action="{% url 'song' song_name=name %}" method="POST">
+			{% csrf_token %}
+			<input type="text" name="name" placeholder="Enter a song name">
+			<button class="button" type="submit">Submit</button>
+		</form>
+	</div>
+	
+
+	<div class="row artist-wrapper">
+		<div class="col-md-6">
+			<div class="artist-details">
+				<div class="top">
+					<div class="artist-name">
+						<h1>{{name}}</h1>
+					</div>
+					<div class="artist-followers">
+						<h3>By <a href="{% url 'artist' artist_name=artist %}">{{artist}}</a></h3>
+					</div>
+				</div>
+
+				<div class="down">
+					<table class="table table-hover">
+						<tr>
+							<th>Album</th>
+							<td>{{album}}</td>
+						</tr>
+						<tr>
+							<th>Listen On</th>
+							<td><a href="{{link}}">Spotify</a></td>
+						</tr>
+						<tr>
+							<th>Popularity</th>
+							<td>{{popularity}}</td>
+						</tr>
+						<tr>
+							<th>Explicit</th>
+							<td>{{explicit}}</td>
+						</tr>
+						<tr>
+							<th>Recommended Songs</th>
+							<td><a href="{% url 'recommend_songs' song_name=name %}">Recommended Songs</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="artist-image">
+				<img src="{{image}}">
+			</div>
+		</div>
+
+	</div>
+
 </div>
+
 
 
  {% endblock content %}
