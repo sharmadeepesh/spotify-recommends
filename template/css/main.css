@@ -3,6 +3,7 @@ body,html {
   list-style:none;
   padding:0px;
   margin:0px;
+  overflow-x: hidden !important;
 }
 
 .brand-logo {
@@ -55,7 +56,6 @@ body,html {
   margin-left:230px;
   height:auto;
   background-color: #121212;
-  position:absolute;
 }
 
 .search-form {
@@ -67,7 +67,6 @@ body,html {
   height:40px;
   border-radius: 25px;
   border:none !important;
-  position: absolute;
 }
 
 .button {
@@ -147,7 +146,7 @@ body,html {
 .artist-image img{
   border-radius:15px;
   box-shadow:0px 0px 20px black;
-  width: 400px;
+  width: 300px;
 }
 
 .artist-wrapper {

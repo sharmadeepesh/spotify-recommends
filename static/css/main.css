@@ -3,6 +3,11 @@ body,html {
   list-style:none;
   padding:0px;
   margin:0px;
+  overflow-x: hidden !important;
+}
+
+.mobile {
+  display: none;
 }
 
 .brand-logo {
@@ -10,7 +15,7 @@ body,html {
   margin:20px auto;
 }
 
-.mobile {
+.mob-menu {
   display:none;
 }
 
@@ -53,13 +58,13 @@ body,html {
 
 .content {
   margin-left:230px;
-  height:auto;
+  min-width:75%;
+  height:100% !important;
   background-color: #121212;
-  position:absolute;
 }
 
 .search-form {
-  margin:30px 30px;
+  padding:30px 30px;
 }
 
 .search-form input{
@@ -67,7 +72,17 @@ body,html {
   height:40px;
   border-radius: 25px;
   border:none !important;
-  position: absolute;
+}
+
+.random-lyrics {
+  height: 75% !important;
+  padding: 40;
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+.lyrics {
+  display: block;
 }
 
 .button {
@@ -86,14 +101,15 @@ body,html {
 }
 
 .search-results {
-  margin: 130px 75px;
+  margin: 0px 75px;
 }
 
 .result {
+  margin: auto;
   background-color: #272727;
   border-radius:15px;
   width:198px;
-  height:auto;
+  height:272px;
   color:white;
   margin-bottom: 30px;
 }
@@ -103,6 +119,7 @@ body,html {
   color:white;
   text-align: center;
   word-break: break-all;
+  margin:0px !important;
 }
 
 .result-desc h6{
@@ -113,14 +130,10 @@ body,html {
 }
 
 .result-details {
-  padding-bottom:10px;
+  padding:0px 10px 10px 10px;
 }
 
 .down table{
-  color:white !important;
-}
-
-.artist-name h1{
   color:white !important;
 }
 
@@ -129,7 +142,6 @@ body,html {
 }
 
 .artist-details {
-  margin: 85px 0px 0px 50px;
 }
 
 .top{
@@ -137,15 +149,16 @@ body,html {
 }
 
 .artist-name {
+  color:white;
   margin-bottom:15px;
 }
 
 .down table{
-  width:100px;
+  width:100%;
 }
 
 .artist-image {
-  margin: 100px 0px 0px 50px;
+  margin: 20px 0px 0px 50px;
 }
 
 .artist-image img{
@@ -158,29 +171,155 @@ body,html {
   margin:0px 50px !important;
 }
 
-@media (max-width:1250px) and (min-width:994px){
-  .result{
-    margin: 20px;
-  }
-}
+@media only screen and (max-width:768px)
+{
 
-@media (max-width:1200px)
-{ 
-  body, html{
-    background-color: white !important;
-    line-height: 1.2px;
-    padding:10px;
+  *{
+    margin:0px !important;
   }
-  .mobile {
-    display:inline-block;
-  }
-  .desktop{
+
+  .sidebar{
     display:none;
   }
-  img {
-    width:300px;
+
+  body, html {
+    width:100%;
     height: auto;
-    padding:10px;
-    margin:0px auto;
+    font-size:15px !important;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .mob-menu {
+    width:100% !important;
+    display:inline-block;
+    background-color: black;
+  }
+
+  .navbar-nav {
+    list-style-type: none !important;
+  }
+  /*.mob-brand-logo {
+    width:50% !important;
+    margin:10px 0px !important;
+    display:inline-block !important;
+  }
+
+  .mob-brand-logo img{
+    width:75%;
+    margin:0px 12.5px !important;
+  }*/
+
+  .navbar-brand {
+    width: 100%;
+    height:auto !important;
+  }
+  .navbar img{
+    width: 50% !important;
+  }
+
+  .navbar-toggler {
+    margin: 0px !important;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+  }
+
+  .content {
+    margin:0px !important;
+    width:100% !important;
+    height: 75vh !important;
+  }
+  .dropdown {
+    display:inline-block;
+    margin-left: 40% !important;
+  }
+
+  .search-form {
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 100% !important;
+    height: auto !important;
+    text-align: center !important;
+  }
+
+  .search-form form{
+    display: inline-block;
+    margin: 50px 0px !important;
+    width:100% !important;
+    height:30px;
+  }
+
+  .search-form input{
+    margin:0px !important;
+    padding:0px !important;
+    position:relative;
+    width: 75% !important;
+    height: 50px !important;
+    text-align: center;
+  }
+
+  .top {
+    margin:20px 0px !important;
+    text-align: center;
+  }
+  .artist-name{
+    margin:5px 5px 10px 5px !important;
+  }
+  .artist-desc{
+    margin:5px 5px 10px 5px !important;
+  }
+  .down{
+    margin:20px 0px !important;
+  }
+  .down table{
+    margin: 0px auto !important;
+  }
+  .artist-image img{
+    width: 75%;
+    height: auto;
+    margin: 40px 13% !important;
+  }
+  .navbar-toggler {
+    margin-right: 5% !important;
+    margin-top: -10% !important;
+  }
+  .navbar-nav {
+    padding:0px !important;
+  }
+  .nav-item {
+    width:75% !important;
+    margin:10px 10px !important;
+  }
+  .nav-item a{
+    font-size:20px !important;
+  }
+  .nav-item img{
+    margin-right:10px !important;
+    height:28px !important;
+    width: auto !important;
+  }
+  .result {
+    width: 75% !important;
+    margin: 20px auto !important;
+    height:auto;
+  }
+  .result-image {
+    text-align: center;
+  }
+  .result-image img{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+  .result-header h3{
+    padding: 10px;
+    font-size: 25px;
+  }
+  .result-desc h6{
+    font-size:15px;
+    padding:5px;
   }
 }

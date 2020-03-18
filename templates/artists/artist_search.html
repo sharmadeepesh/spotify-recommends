@@ -3,20 +3,18 @@
 
 {% block content %}
 
-<div class="content w-75 h-75">
-		<div class="search-form">
-			<form class="form" action="{% url 'artist' %}" method="POST">
-				{% csrf_token %}
-				<input type="text" name="name" placeholder="Enter an artist name">
-				<button class="button" type="submit">Submit</button>
-			</form>
-		</div>
+<div class="content">
+	<div class="search-form">
+		<form class="form" action="{% url 'artist' %}" method="POST">
+			{% csrf_token %}
+			<input type="text" name="name" placeholder="Enter an artist name">
+			<button class="button" type="submit">Submit</button>
+		</form>
+	</div>
 
-		<div class="row h-100">
-			<div class="col-md-12 align-self-center text-center">
-				<h2>{{lyrics}}</h2>
-			</div>
-		</div>
+	<div class="random-lyrics">
+			<h2 class="lyrics">{{lyrics}}</h2>
+	</div>
 </div>
 
 {% endblock content %}

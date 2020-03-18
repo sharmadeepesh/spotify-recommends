@@ -12,7 +12,7 @@
 
 
 	<div class="row artist-wrapper">
-		<div class="col-md-6">
+		<div class="col-sm-12 col-md-12 col-lg-6">
 			<div class="artist-details">
 				<div class="top">
 					<div class="artist-name">
@@ -24,10 +24,10 @@
 				</div>
 
 				<div class="down">
-					<table class="table table-hover">
+					<table class="table">
 						<tr>
 							<th>Genre</th>
-							<td style="text-transform: capitalize;">{% for genre in artist_details.genres %} {{genre}} {% endfor %}</td>
+							<td style="text-transform: capitalize;"><ul style='list-style-type:none !important;'>{% for genre in artist_details.genres %} <li>{{genre}}</li> {% endfor %}</ul></td>
 						</tr>
 						<tr>
 							<th>Artist Profile</th>

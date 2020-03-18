@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="content w-75 h-75">
+<div class="content">
 	<div class="search-form">
 		<form class="form" action="{% url 'recommend_songs' %}" method="POST">
 			{% csrf_token %}
@@ -11,10 +11,8 @@
 		</form>
 	</div>
 
-	<div class="row h-100">
-		<div class="col-md-12 align-self-center text-center">
-			<h2>{{ lyrics }}</h2>
-		</div>
+	<div class="random-lyrics">
+		<h2 class="lyrics">{{ lyrics }}</h2>
 	</div>
 </div>
 

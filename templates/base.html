@@ -4,9 +4,9 @@
 <head>
 	<title>Spotify Recommends | Get recommended Songs</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="{% static 'css/main.css' %}">
-  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,12 +15,6 @@
 
 <body>
 
-<div class="mobile">
-	<h2>This website is not available for mobile devices yet. Please view in desktop mode.</h2>
-	<img src="https://www.iconbunny.com/icons/media/catalog/product/cache/2/thumbnail/600x/1b89f2fc96fc819c2a7e15c7e545e8a9/3/7/371.12-under-construction-sign-icon-iconbunny.jpg">
-</div>
-	
-<div class="desktop">
 	<div class="sidebar">
 		<div class="brand-logo">
 			<a href="{% url 'home' %}">
@@ -54,11 +48,46 @@
 		</div>
 	</div>
 
+	<nav class="mobile mob-menu navbar navbar-expand-lg navbar-light bg-light">
+  		<div class="navbar-brand"><a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"></a></div>
+  		<button style="margin:0px !important;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarNav">
+    		<ul class="navbar-nav">
+      			<li class="nav-item active">
+      				<img src="{% static 'img/home.png' %}">
+        			<a class="nav-link" href="#">Home</a>
+      			</li>
+      			<li class="nav-item active">
+      				<img src="{% static 'img/music.png' %}">
+        			<a class="nav-link" href="#">Songs</a>
+      			</li>
+      			<li class="nav-item active">
+      				<img src="{% static 'img/person.png' %}">
+        			<a class="nav-link" href="#">Artist</a>
+      			</li>
+      			<li class="nav-item active">
+      				<img src="{% static 'img/recommend.png' %}">
+        			<a class="nav-link" href="#">Recommend Songs</span></a>
+      			</li>
+      			<li class="nav-item active">
+      				<img src="{% static 'img/recommend.png' %}">
+        			<a class="nav-link" href="#">Recommend Artists</span></a>
+      			</li>
+      			<li class="nav-item active">
+      				<img src="{% static 'img/contribute.png' %}">
+        			<a class="nav-link" href="#">Contribute</span></a>
+      			</li>
+    		</ul>
+  		</div>
+	</nav>
+
+
 {% block content %}
 
 {% endblock content %}
 
-</div>
 </body>
 
 </html>

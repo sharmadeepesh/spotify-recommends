@@ -15,7 +15,7 @@
 	<div class="search-results">
 		<div class="row">
 			{% for track in tracks %}
-				<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="col-md-3">
 					<div class="w-80 result">
 						<div class="result-image">
 							<a href="{% url 'song' song_name=track.6 %}"><img src="{{track.5}}"></a>
@@ -35,24 +35,5 @@
 	</div>
 
 </div>
-
-
-
-
-	<!--<div style="margin-top: 50px;overflow-y: hidden !important;" class="result-section">
-		<h2 style="font-size: 35px;color: white;" class="search-heading">Search Results</h2>
-		<div style="margin-top: 5px !important;margin-left: -30px !important;margin-right: 50px !important;" class="results row">
-			{% for track in tracks %}
-				<div class="col-md-3">
-					<div style="padding: 10px;background-color: #565656;margin: 10px;margin-right: 0px;border-radius: 10px;" class="cards">
-						<a href="{% url 'song' song_name=track.6 %}"><img style="padding: 10px;width: 180px !important;align-content: center;margin: auto;" class="card-img" src="{{ track.5 }}"></a>
-						<h4 style="text-align:center;color: white;font-size: 20px !important;" class="card-heading">{{track.0}}</h4>
-						<h5 style="text-align: center;color: #D0D0D0;font-size: 15px !important;" class="card-artist">{{track.3}}</h5>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
-	</div>
-</div>-->
 
 {% endblock content %}
