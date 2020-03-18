@@ -297,34 +297,29 @@ body,html {
   .nav-item a{
     font-size:20px !important;
   }
-
+  
   .nav-item img{
     margin-right:10px !important;
     height:28px !important;
     width: auto !important;
   }
-
   .result {
     width: 75% !important;
     margin: 20px auto !important;
     height:auto;
   }
-  
   .result-image {
     text-align: center;
   }
-
   .result-image img{
     width: 100%;
     height: auto;
     padding: 20px;
-  }
-
+}
   .result-header h3{
     padding: 10px;
     font-size: 25px;
   }
-
   .result-desc h6{
     font-size:15px;
     padding:5px;
