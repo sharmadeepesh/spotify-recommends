@@ -201,21 +201,12 @@ body,html {
   .navbar-nav {
     list-style-type: none !important;
   }
-  /*.mob-brand-logo {
-    width:50% !important;
-    margin:10px 0px !important;
-    display:inline-block !important;
-  }
-
-  .mob-brand-logo img{
-    width:75%;
-    margin:0px 12.5px !important;
-  }*/
 
   .navbar-brand {
     width: 100%;
     height:auto !important;
   }
+
   .navbar img{
     width: 50% !important;
   }
@@ -232,6 +223,7 @@ body,html {
     width:100% !important;
     height: 75vh !important;
   }
+
   .dropdown {
     display:inline-block;
     margin-left: 40% !important;
@@ -265,59 +257,74 @@ body,html {
     margin:20px 0px !important;
     text-align: center;
   }
+
   .artist-name{
     margin:5px 5px 10px 5px !important;
   }
+
   .artist-desc{
     margin:5px 5px 10px 5px !important;
   }
+
   .down{
     margin:20px 0px !important;
   }
+
   .down table{
     margin: 0px auto !important;
   }
+
   .artist-image img{
     width: 75%;
     height: auto;
     margin: 40px 13% !important;
   }
+
   .navbar-toggler {
     margin-right: 5% !important;
     margin-top: -10% !important;
   }
+
   .navbar-nav {
     padding:0px !important;
   }
+
   .nav-item {
     width:75% !important;
     margin:10px 10px !important;
   }
+
   .nav-item a{
     font-size:20px !important;
   }
+
   .nav-item img{
     margin-right:10px !important;
     height:28px !important;
     width: auto !important;
   }
+
   .result {
     width: 75% !important;
     margin: 20px auto !important;
     height:auto;
   }
+  
   .result-image {
     text-align: center;
   }
+
   .result-image img{
     width: 100%;
     height: auto;
     padding: 20px;
-}
+  }
+
   .result-header h3{
     padding: 10px;
     font-size: 25px;
   }
+
   .result-desc h6{
     font-size:15px;
     padding:5px;
