@@ -1,7 +1,7 @@
 # spotify-recommends
 Get recommended songs using Spotify API
 
-Live at <a href="spotify-recommends.herokuapp.com">Spotify Recommends</a>
+Live at <a href="https://spotify-recommends.herokuapp.com">Spotify Recommends</a>
 
 <h1>Get Song Recommendations</h1>
 
