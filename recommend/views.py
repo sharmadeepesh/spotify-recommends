@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse
 import requests
 import json
 import spotipy
-import spotipy.util as util
+import spotipy.oauth2 as oauth2
 from random import randint
 
 client_id = "94f8b776bcbe42b0a3c8dd46f94303b1"
@@ -35,7 +35,7 @@ def homepage(request):
 def artist_detail(request, artist_name = ''):
     if request.method == "POST":
         artist_name = request.POST.get('name')
-        token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
+        token =oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
         access_token = token.get_access_token()    
         get_id_url = "https://api.spotify.com/v1/search?q={}&type=artist&limit=1&access_token={}"
         artist_list = requests.get(get_id_url.format(artist_name,access_token)).json()
@@ -69,7 +69,7 @@ def artist_detail(request, artist_name = ''):
             }
             return render(request, 'artists/artist_search.html',context=context)
         else:
-            token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
+            token =oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
             access_token = token.get_access_token()    
             get_id_url = "https://api.spotify.com/v1/search?q={}&type=artist&limit=1&access_token={}"
             artist_list = requests.get(get_id_url.format(artist_name,access_token)).json()
@@ -99,7 +99,7 @@ def song_search(request):
     songs = []
     track = []
     if request.method == "POST":
-        token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
+        token =oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
         access_token = token.get_access_token()    
         song_name = request.POST.get('name')
         get_song_details_url = "https://api.spotify.com/v1/search?q={}&type=track&access_token={}"
@@ -128,7 +128,7 @@ def song_search(request):
 
 
 def song_detail(request, song_name):
-    token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
+    token = oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
     access_token = token.get_access_token()
     get_song_details_url = "https://api.spotify.com/v1/search?q={}&type=track&access_token={}"
     track = requests.get(get_song_details_url.format(song_name,access_token)).json()
@@ -151,7 +151,7 @@ def recommend_songs(request, song_name=""):
     track = []
     if request.method == "POST":
         song_name=request.POST.get('name')
-        token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
+        token =oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
         access_token = token.get_access_token()
         get_song_details_url = "https://api.spotify.com/v1/search?q={}&type=track&access_token={}"
         track_response = requests.get(get_song_details_url.format(song_name,access_token)).json()
@@ -180,7 +180,7 @@ def recommend_songs(request, song_name=""):
             }
             return render(request,'song/recommend_search.html', context=context)
         else:
-            token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
+            token =oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
             access_token = token.get_access_token()
             get_song_details_url = "https://api.spotify.com/v1/search?q={}&type=track&access_token={}"
             track_response = requests.get(get_song_details_url.format(song_name,access_token)).json()
@@ -207,7 +207,7 @@ def recommend_artists(request, artist_name = ""):
     track = []
     if request.method == "POST":
         artist_name=request.POST.get('name')
-        token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
+        token = oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
         access_token = token.get_access_token()
         get_artist_details_url = "https://api.spotify.com/v1/search?q={}&type=artist&access_token={}"
         artist_response = requests.get(get_artist_details_url.format(artist_name,access_token)).json()
@@ -236,7 +236,7 @@ def recommend_artists(request, artist_name = ""):
             }
             return render(request,'artists/recommended_search.html', context=context)
         else:
-            token =util.oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
+            token = oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
             access_token = token.get_access_token()
             get_artist_details_url = "https://api.spotify.com/v1/search?q={}&type=artist&access_token={}"
             artist_response = requests.get(get_artist_details_url.format(artist_name,access_token)).json()

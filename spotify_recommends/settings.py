@@ -1,4 +1,5 @@
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -12,9 +13,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,"templates/")
 SECRET_KEY = '7_6ty0imq9re$i))sqvivf*hc1p%ksh=o&5cajmj@nil0(n^pp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://www.spotify-recommends.herokuapp.com']
 
 
 # Application definition
@@ -111,3 +112,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+django_heroku.settings(locals())
