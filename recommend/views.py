@@ -5,8 +5,8 @@ import spotipy
 import spotipy.oauth2 as oauth2
 from random import randint
 
-client_id = "94f8b776bcbe42b0a3c8dd46f94303b1"
-client_secret = "55852e22c6b0414eb121890ecdc51692"
+client_id = "ID"
+client_secret = "SECRET"
 
 random_lyrics = [
     'Girl, you got that "Yummy" Yum',
